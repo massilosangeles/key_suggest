@@ -19,7 +19,8 @@ return $unit;
 
 extract($_POST);
   // Verification of the captcha here ...
-  $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeLTSQUAAAAACX4j177jA6L6Nl5aPraDvyvzuSq&response=".$captcha_response."&remoteip=".$_SERVER['REMOTE_ADDR']);
+  $privatekey = "6LeLTSQUAAAAACX4j177jA6L6Nl5aPraDvyvzuSq";
+  $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$privatekey."&response=".$captcha_response."&remoteip=".$_SERVER['REMOTE_ADDR']);
   if($response==false)
   {
     echo 'You are a robot!';

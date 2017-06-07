@@ -10,18 +10,18 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
   <body>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <legend class="col-md-6">Keyword Suggestion</legend>
-    <div class="col-md-3"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <span class="help-block">NOTHING ACTUALLY</span><br/>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <legend class="col-md-6">Keyword Suggestion</legend>
+      <div class="col-md-3"></div>
     </div>
-    <div class="col-md-3"></div>
-  </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <span class="help-block">NOTHING ACTUALLY</span><br/>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
     <form id="form_snoop" class="form-horizontal" action="snooper.php" method="post">
       <fieldset>
         <!-- Text input-->
@@ -63,7 +63,8 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="captcha">Captcha</label>
           <div class="col-md-4">
-            <div class="g-recaptcha" data-sitekey="6LeLTSQUAAAAAALRd7cSQkGyiWfBVmq5QehBTKf_"></div> 
+            <!-- Change data-sitekey with public key of your api google-->
+            <div class="g-recaptcha" data-sitekey="6LeLTSQUAAAAAALRd7cSQkGyiWfBVmq5QehBTKf_"></div>
           </div>
         </div>
         <!-- Button -->
@@ -76,68 +77,68 @@
       </fieldset>
     </form>
     <div class="row" id="add">
-       <div class="col-md-3"></div>
-       <div class="form-group col-md-6">
-          <form id="form_add" action="add_form.php" class="form-horizontal" method="post">
-            <fieldset>
-              <legend>Add</legend>
-              <!-- ADD 1 -->
-              <div class="form-group">
-                <label class="col-md-4 control-label" for="add1">Do you need .....</label>
-                <div class="col-md-4">
-                  <label class="radio-inline" for="add1-0">
-                    <input name="add1" id="add1-0" value="1" type="radio" required="">
-                    Yes
-                  </label>
-                  <label class="radio-inline" for="add1-0">
-                    <input name="add1" id="add1-1" value="2" type="radio" required="">
-                    No
-                  </label>
-                </div>
+      <div class="col-md-3"></div>
+      <div class="form-group col-md-6">
+        <form id="form_add" action="add_form.php" class="form-horizontal" method="post">
+          <fieldset>
+            <legend>Add</legend>
+            <!-- ADD 1 -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="add1">Do you need .....</label>
+              <div class="col-md-4">
+                <label class="radio-inline" for="add1-0">
+                  <input name="add1" id="add1-0" value="1" type="radio" required="">
+                  Yes
+                </label>
+                <label class="radio-inline" for="add1-0">
+                  <input name="add1" id="add1-1" value="2" type="radio" required="">
+                  No
+                </label>
               </div>
-              <!-- ADD 2-->
-              <div class="form-group">
-                <label class="col-md-4 control-label" for="add2">Do you like .....</label>
-                <div class="col-md-4">
-                  <label class="radio-inline" for="add1-0">
-                    <input name="add2" id="add2-0" value="1" type="radio" required="">
-                    Yes
-                  </label>
-                  <label class="radio-inline" for="add1-0">
-                    <input name="add2" id="add2-1" value="2" type="radio" required="">
-                    No
-                  </label>
-                </div>
+            </div>
+            <!-- ADD 2-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="add2">Do you like .....</label>
+              <div class="col-md-4">
+                <label class="radio-inline" for="add1-0">
+                  <input name="add2" id="add2-0" value="1" type="radio" required="">
+                  Yes
+                </label>
+                <label class="radio-inline" for="add1-0">
+                  <input name="add2" id="add2-1" value="2" type="radio" required="">
+                  No
+                </label>
               </div>
-              <div class="form-group">
-          <label class="col-md-4 control-label" for="submit">Submit or Close</label>
-          <div class="col-md-4">
-            <button id="submit-add" name="submit" class="btn btn-primary">Send</button>
-            <button id="close" type=button name="close" class="btn btn-primary">Close</button>
-          </div>
-        </div>
-            </fieldset>
-          </form>
-        </div> 
-         <div class="col-md-3"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="submit">Submit or Close</label>
+              <div class="col-md-4">
+                <button id="submit-add" name="submit" class="btn btn-primary">Send</button>
+                <button id="close" type=button name="close" class="btn btn-primary">Close</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-md-3"></div>
     </div>
     <div class="row" id="resultat">
-       <div class="col-md-3"></div>
-       <div class="form-group col-md-6" class="table-responsive">
-          <label for="resultat_area"></label>
-          <table id="resultat_tab" class="table">
-            <caption>Suggestions</caption>
-            <thead>
-              <tr>
-                <th>Keyword</th>
-              </tr>
-            </thead>
-            <tbody id="tbody_result">
-              
-            </tbody>
-          </table>
-        </div> 
-         <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div class="form-group col-md-6" class="table-responsive">
+        <label for="resultat_area"></label>
+        <table id="resultat_tab" class="table">
+          <caption>Suggestions</caption>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+            </tr>
+          </thead>
+          <tbody id="tbody_result">
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-3"></div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
