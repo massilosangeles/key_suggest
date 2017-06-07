@@ -2,7 +2,7 @@ function clean_form(area) {
   $('#keywords').val('');
   $('#mail').val('');
   if (area == 2) {
-    $("#tbody_result").empty();
+    $("#resultat_tab tr").remove();
   }
   if (area == 1) {
     grecaptcha.reset();
@@ -22,6 +22,7 @@ $( document ).ready(function() {
   // When form is submit I do ...
   $('#form_snoop').submit(function(event) {
     // Take all information from form
+    $("#resultat_tab tr").remove();
     keywords = $('#keywords').val();
     mail = $('#mail').val();
     newsletter = $('input[name=newsletter]:checked').val();
