@@ -29,7 +29,7 @@ $( document ).ready(function() {
     service = $('input[name=service]:checked').val();
     captcha_response = grecaptcha.getResponse();
     if (captcha_response != '') {
-      $.post('snooper.php', {keywords: keywords, mail: mail,newsletter: newsletter, service: service, captcha_response: captcha_response }, function(data) {
+      $.post('keywordgen.php', {keywords: keywords, mail: mail,newsletter: newsletter, service: service, captcha_response: captcha_response }, function(data) {
       //Write the result
         data = jQuery.parseJSON(data);
         $('#add').show();
