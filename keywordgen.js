@@ -30,12 +30,7 @@ $(document).ready(function() {
     service = $('input[name=service]:checked').val();
     captcha_response = grecaptcha.getResponse();
     if (captcha_response != "" && keywords != '' && mail != '' && newsletter != '' && service != '') {
-      $.post('keywordgen.php', {
-        keywords: keywords,
-        mail: mail,
-        newsletter: newsletter,
-        service: service,
-        captcha_response: captcha_response
+      $.post('keywordgen.php', { keywords: keywords, mail: mail, newsletter: newsletter,  service: service, captcha_response: captcha_response
       }, function(data) {
         //Write the result
         data = jQuery.parseJSON(data);
@@ -52,6 +47,7 @@ $(document).ready(function() {
       // I give a request to process 
       return false;
     }
+    return false;
   });
   $('#close').click(function(event) {
     $('#add').hide();

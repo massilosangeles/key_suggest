@@ -26,7 +26,7 @@ if ($response == false) {
   
 } else {
   if ($keywords == '' && $mail == '' && $newsletter == '' && $service == '') {
-    echo "empty input";
+    echo "Empty input";
   } else {
     // Send information for newsletter ect.
     //TODO
@@ -101,6 +101,9 @@ if ($response == false) {
     /*foreach ($all_result_keyword as $key => $value) {
     $all_result_keyword[$key] = utf8_encode($value);
     }*/
+    foreach ($all_result_keyword as $key => $value) {
+      $all_result_keyword[$key] = utf8_encode($value);
+    }
     print_r(json_encode($all_result_keyword));
   }
 }
