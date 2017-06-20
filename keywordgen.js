@@ -12,9 +12,13 @@ function clean_form(area) {
 }
 
 function add_result(tab) {
+  for (var i = 0; i < tab.length; i++) {
+        $('#resultat_tab > tbody:last').append("<tr><td>" + tab[i] + "</td></tr>");
+  }
+  /*
   for (var i in tab) {
     $('#resultat_tab > tbody:last').append("<tr><td>" + tab[i] + "</td></tr>");
-  }
+  }*/
 }
 // A $( document ).ready() block.
 $(document).ready(function() {
@@ -34,7 +38,8 @@ $(document).ready(function() {
       }, function(data) {
         //Write the result
         data = jQuery.parseJSON(data);
-        //console.log(data);
+        console.log(data);
+        console.log(typeof(data));
         $('#add').show();
         add_result(data);
         $('#resultat').show();

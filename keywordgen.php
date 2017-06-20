@@ -101,10 +101,17 @@ if ($response == false) {
     /*foreach ($all_result_keyword as $key => $value) {
     $all_result_keyword[$key] = utf8_encode($value);
     }*/
-    foreach ($all_result_keyword as $key => $value) {
+    $final = array();
+    foreach ($all_result_keyword as $value) {
+      array_push($final,utf8_encode($value));
+    }
+    print_r(json_encode($final));
+    /*
+    foreach ($all_result_keyword as $value) {
       $all_result_keyword[$key] = utf8_encode($value);
     }
     print_r(json_encode($all_result_keyword));
+  */
   }
 }
 
